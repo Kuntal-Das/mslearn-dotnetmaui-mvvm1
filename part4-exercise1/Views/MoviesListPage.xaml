@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MovieCatalog.ViewModels"
@@ -7,7 +8,10 @@
              x:DataType="vm:MovieListViewModel"
              Title="Movies"
              BindingContext="{x:Static local:App.MainViewModel}">
-    <ListView ItemsSource="{Binding Movies}" Margin="10" ItemTapped="ListView_ItemTapped">
+    <ListView ItemsSource="{Binding Movies}" 
+              SelectedItem="{Binding SelectedMovie}" 
+              Margin="10"
+              ItemTapped="ListView_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Title}" x:DataType="vm:MovieViewModel">
